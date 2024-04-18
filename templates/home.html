@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-100">
+    {% include 'partials/_header.html' %}
+    <div class="container mx-auto mt-8 min-h-screen">
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <div>
+          <label for="file1">Upload the first audio file:</label>
+          <input type="file" id="file1" name="file1" accept="audio/*">
+        </div>
+        <div>
+          <label for="file2">Upload the second audio file:</label>
+          <input type="file" id="file2" name="file2" accept="audio/*">
+        </div>
+        <div>
+          <label for="bpmAdjustment">Choose which audio to adjust BPM:</label>
+          <select name="bpmAdjustment" id="bpmAdjustment">
+            <option value="file1">First Audio</option>
+            <option value="file2">Second Audio</option>
+          </select>
+        </div>
+        <input type="submit">
+      </form>
+    </div>
+   {% include 'partials/_footer.html' %}
+  </body>
+</html>
